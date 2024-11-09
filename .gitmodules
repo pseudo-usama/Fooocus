@@ -1,0 +1,3 @@
+[submodule "prompter"]
+	path = prompter
+	url = https://github.com/pseudo-usama/prompter.git
