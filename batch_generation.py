@@ -79,7 +79,7 @@ def simple_generate(prompt, quality, size, num_of_imgs):
 
 
 def generate_in_batch(photoshoot_plans, parent_dir="batch_generation", test=False):
-    for i, plan in enumerate(photoshoot_plans):
+    for i, plan in enumerate(photoshoot_plans, start=1):
         quality = 'Speed' if test else 'Quality'
         size = plan["aspect_ratio"]
         n = 5 if test else 10
