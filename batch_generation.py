@@ -60,11 +60,11 @@ def generate(args):
 def simple_generate(prompt, quality, size, num_of_imgs):
     args = [False, 'a girl', '', ['Fooocus V2', 'Fooocus Enhance', 'Fooocus Sharp'], 'Speed', '1152×896 <span style="color: grey;"> ∣ 9:7</span>', 2, 'png', '8710412579712811529', False, 2, 4, 'juggernautXL_v8Rundiffusion.safetensors', 'None', 0.5, True, 'sd_xl_offset_example-lora_1.0.safetensors', 0.1, True, 'None', 1, True, 'None', 1, True, 'None', 1, True, 'None', 1, False, 'uov', 'Disabled', None, [], None, '', None, False, False, False, False, 1.5, 0.8, 0.3, 7, 2, 'dpmpp_2m_sde_gpu', 'karras', 'Default (model)', -1, -1, -1, -1, -1, -1, False, False, False, False, 64, 128, 'joint', 0.25, False, 1.01, 1.02, 0.99, 0.95, False, False, 'v2.6', 1, 0.618, False, False, 0, False, False, 'fooocus', None, 0.5, 0.6, 'ImagePrompt', None, 0.5, 0.6, 'ImagePrompt', None, 0.5, 0.6, 'ImagePrompt', None, 0.5, 0.6, 'ImagePrompt', False, 0, False, None, False, 'Disabled', 'Before First Enhancement', 'Original Prompts', False, '', '', '', 'sam', 'full', 'vit_b', 0.25, 0.3, 0, False, 'v2.6', 1, 0.618, 0, False, False, '', '', '', 'sam', 'full', 'vit_b', 0.25, 0.3, 0, False, 'v2.6', 1, 0.618, 0, False, False, '', '', '', 'sam', 'full', 'vit_b', 0.25, 0.3, 0, False, 'v2.6', 1, 0.618, 0, False]
 
-    if size == (1080, 1350):
+    if size == [1080, 1350]:
         size = '1080×1350 <span style="color: grey;"> ∣ 4:5</span>'
-    elif size == (1024, 1024):
+    elif size == [1024, 1024]:
         size = '1024×1024 <span style="color: grey;"> ∣ 1:1</span>'
-    elif size == (1080, 566):
+    elif size == [1080, 566]:
         size = '1080×566 <span style="color: grey;"> ∣ 1.91:1</span>'
     else:
         raise ValueError(f'Unsupported image size "{size}"')
