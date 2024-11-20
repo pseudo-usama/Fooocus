@@ -85,13 +85,18 @@ def generate_in_batch(photoshoot_plans, parent_dir="batch_generation", test=Fals
         n = 5 if test else 10
         dir_path = f"{parent_dir}/{i}. {plan['theme']}"
 
+        try:
+            os.makedirs(dir_path)
+        except:
+            dir_path = f"{parent_dir}/{i}"
+            os.makedirs(dir_path)
+
         def generate(prompt, start_index=1):
             imgs = simple_generate(prompt, quality, size, n)
 
             for j, im in enumerate(imgs, start=start_index):
                 writetheimg(im, f'{dir_path}/{j}.png')
 
-        os.makedirs(dir_path)
         with open(f'{dir_path}/prompt.txt', 'w') as f:
             json.dump(plan, f, indent=2)
 
